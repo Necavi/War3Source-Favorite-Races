@@ -341,10 +341,10 @@ public OnWar3Event(W3EVENT:event, client)
 		g_hDatabase = W3GetVar(hDatabase);
 		new String:query[512];
 		Format(query, sizeof(query), "CREATE  TABLE IF NOT EXISTS `war3_favrace_players` ( \
-			`player_id` INT UNSIGNED NOT NULL , \
-			`player_steam` VARCHAR(32) NULL , \
+			`player_id` INT UNSIGNED NOT NULL, \
+			`player_steam` VARCHAR(32) NULL, \
 			PRIMARY KEY (`player_id`) \
-			UNIQUE (`player_steam`));" \
+			UNIQUE KEY(`player_steam`));" \
 			);
 		SQL_TQuery(g_hDatabase, SQLCallback_CreatePlayerTable, query);
 	}
